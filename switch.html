@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="firstnumber" placeholder="enter firstnumber" /><br />
+    <input
+      type="text"
+      id="secondnumber"
+      placeholder="enter secondnumber"
+    /><br />
+    <input type="text" id="operator" placeholder="enter operator" /><br />
+    <button onclick="calc()">calculator</button>
+
+    <h2 id="demo"></h2>
+    <script>
+      function calc() {
+        let firstnumber = document.getElementById("firstnumber").value;
+        let secondnumber = document.getElementById("secondnumber").value;
+        let operator = document.getElementById("operator").value;
+
+        var result;
+
+        switch (operator) {
+          case "+":
+            result = parseFloat(firstnumber) + parseFloat(secondnumber);
+            document.getElementById("demo").innerHTML =
+              "sum of two number is : "+
+              result;
+            break;
+
+          case "-":
+            result = parseFloat(firstnumber) - parseFloat(secondnumber);
+            document.getElementById("demo").innerHTML =
+              "sub of two number is : "+
+              result;
+            break;
+
+          case "*":
+            result = parseFloat(firstnumber) * parseFloat(secondnumber);
+            document.getElementById("demo").innerHTML =
+              "multi of two number is :"+
+              result;
+            break;
+
+          case "/":
+            result = parseFloat(firstnumber) / parseFloat(secondnumber);
+            document.getElementById("demo").innerHTML =
+              "divide of two number is :"+
+              result;
+            break;
+          default:
+            document.getElementById("demo").innerHTML = "invalid operator";
+        }
+      }
+    </script>
+  </body>
+</html>
